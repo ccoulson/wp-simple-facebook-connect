@@ -49,13 +49,13 @@ function sfc_plugin_loader() {
 }
 
 // fix up the html tag to have the FBML extensions
-add_filter('language_attributes','sfc_lang_atts');
+//add_filter('language_attributes','sfc_lang_atts');
 function sfc_lang_atts($lang) {
     return ' xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" '.$lang;
 }
 
 // basic XFBML load into footer
-add_action('wp_footer','sfc_add_base_js',20); // 20, to put it at the end of the footer insertions. sub-plugins should use 30 for their code
+//add_action('wp_footer','sfc_add_base_js',20); // 20, to put it at the end of the footer insertions. sub-plugins should use 30 for their code
 function sfc_add_base_js($args=array()) {
 	$options = get_option('sfc_options');
 	sfc_load_api($options['appid'],$args);
@@ -486,7 +486,7 @@ function sfc_base_make_excerpt($post) {
 include 'sfc-media.php';
 
 // add meta tags for *everything*
-add_action('wp_head','sfc_base_meta');
+//add_action('wp_head','sfc_base_meta');
 function sfc_base_meta() {
 	global $post;
 	
