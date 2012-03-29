@@ -148,7 +148,7 @@ function sfc_admin_init(){
 	if (empty($options['app_secret']) || empty($options['appid'])) {
 		add_action('admin_notices', create_function( '', "echo '<div class=\"error\"><p>".sprintf(__('Simple Facebook Connect needs configuration information on its <a href="%s">settings</a> page.', 'sfc'), admin_url('options-general.php?page=sfc'))."</p></div>';" ) );
 	} else {
-		add_action('admin_print_footer_scripts','sfc_add_base_js',20);
+		//add_action('admin_print_footer_scripts','sfc_add_base_js',20);
 	}
 	wp_enqueue_script('jquery');
 	register_setting( 'sfc_options', 'sfc_options', 'sfc_options_validate' );
